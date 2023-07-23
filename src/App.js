@@ -50,33 +50,7 @@ const App = () => {
       </Box>
       <Box row mx="-20rpx">
         <Box col={{ xs: 1, md: 0.5 }} px="-20rpx">
-          <Form>
-            <Field
-              {...form}
-              name="firstname"
-              label="Nome"
-              placeholder="Nome"
-            />
-           
-            <Field
-              {...form}
-              name="position"
-              label="Cargo"
-              placeholder="Cargo"
-            />
-            <Field
-              {...form}
-              name="phone"
-              label="Telefone"
-              placeholder="Telefone"
-            />
-            <Field
-              {...form}
-              name="address"
-              label="Endereço"
-              placeholder="Endereço"
-            />
-          </Form>
+          
         </Box>
 
         <Box col={{ xs: 1, md: 0.5 }} mt={{ xs: '20rpx', md: 0 }} px="20rpx">
