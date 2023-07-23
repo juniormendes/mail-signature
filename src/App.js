@@ -7,6 +7,7 @@ import {
   FormField,
   FormFieldLabel,
 } from '@smooth-ui/core-sc'
+
 import { Signature } from './Signature'
 
 function Field({ state, setState, name, type, label, placeholder }) {
@@ -34,19 +35,18 @@ function useForm(initialState) {
 
 const App = () => {
   const form = useForm({
-    firstname: 'Prénom',
-    lastname: 'Nom',
-    email: 'contact@smooth-code.com',
-    position: '',
-    phone: '09 82 37 73 08',
-    address: '41 rue Réaumur - 75003 Paris',
+    firstname: 'Seu nome',
+    email: '@grupoafr.com.br',
+    position: 'Cargo',
+    phone: '(11) 99821-8365 / (11) 22891226',
+    address: 'Av. Paulista, 302 - Bela Vista - SP',
   })
 
   return (
     <Box mx="auto" maxWidth={1180} p="20rpx">
       <Normalize />
       <Box display="flex" justifyContent="center" my={45}>
-        <h1>Smooth Code - Mail signature</h1>
+        <h1>Sistema de assinatura - The Grace</h1>
       </Box>
       <Box row mx="-20rpx">
         <Box col={{ xs: 1, md: 0.5 }} px="-20rpx">
@@ -54,46 +54,37 @@ const App = () => {
             <Field
               {...form}
               name="firstname"
-              label="First name"
-              placeholder="Greg"
+              label="Nome"
+              placeholder="Nome"
             />
-            <Field
-              {...form}
-              name="lastname"
-              label="Last name"
-              placeholder="Bergé"
-            />
-            <Field
-              {...form}
-              name="email"
-              label="Email"
-              placeholder="contact@smooth-code.com"
-            />
+           
             <Field
               {...form}
               name="position"
-              label="Job title"
-              placeholder="Directeur technique"
+              label="Cargo"
+              placeholder="Cargo"
             />
             <Field
               {...form}
               name="phone"
-              label="Phone"
-              placeholder="09 82 37 73 08"
+              label="Telefone"
+              placeholder="Telefone"
             />
             <Field
               {...form}
               name="address"
-              label="Address"
-              placeholder="41 rue Réaumur - 75003 Paris"
+              label="Endereço"
+              placeholder="Endereço"
             />
           </Form>
         </Box>
+
         <Box col={{ xs: 1, md: 0.5 }} mt={{ xs: '20rpx', md: 0 }} px="20rpx">
-          <Box border={1} borderColor="#BD4932" borderRadius=".25rem">
+          <Box border={0} borderColor="#3261AB" borderRadius=".25rem">
             <Signature {...form.state} />
           </Box>
         </Box>
+        
       </Box>
     </Box>
   )

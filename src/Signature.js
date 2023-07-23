@@ -1,39 +1,38 @@
 import React from 'react'
+import { MapPinLine, PhoneCall } from 'phosphor-react'
 
 export function Signature({
   firstname,
-  lastname,
   position,
   address,
   phone,
-  email,
 }) {
   return (
-    <div style={{ overflow: 'hidden', textAlign: 'left' }}>
+    <div style={{ overflow: 'hidden', textAlign: 'left', 
+                  fontFamily: 'Figtree', backgroundColor: 'white', 
+                  borderRadius: '.25rem', padding: '10px'}}>
       <div>
-        <br />
-        <br />
-        <table>
+        <table id="assign">
           <tbody>
             <tr>
               <td
                 style={{
                   paddingRight: '10px',
-                  borderRight: '1px solid #BD4932',
+                  borderRight: '1px solid #3261AB',
                 }}
               >
                 <a
-                  href="https://www.smooth-code.com/"
+                  href="https://www.thegrace.com.br/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <img
-                    alt="Smooth Code"
-                    src="https://res.cloudinary.com/smooth/image/upload/c_pad,w_120,dpr_2/v1532531188/mail-signature/smooth-code-logo.png"
+                    alt="The Grace"
+                    src="https://www.thegrace.com.br/assets/img/logo-the-grace-horizontal.svg"
                     style={{
                       borderStyle: 'none',
                       display: 'block',
-                      width: '120px',
+                      width: '220px',
                       marginLeft: '2px',
                       textDecoration: 'none',
                     }}
@@ -49,76 +48,62 @@ export function Signature({
                           minWidth: '250px',
                           paddingLeft: '10px',
                           color: '#333333',
-                          fontFamily: 'Arial,sans-serif',
-                          fontSize: '12px',
+                          fontFamily: 'Figtree, Arial,sans-serif',
+                          fontSize: '16px',
                           fontWeight: 'bold',
                         }}
                       >
-                        {`${firstname} ${lastname.toUpperCase()}`}
+                        {`${firstname}`}
                         <div
                           style={{
-                            marginTop: '5px',
-                            color: '#BD4932',
+                            marginTop: '-5px',
+                            color: '#172D4B',
                             fontWeight: 'normal',
                           }}
                         >
-                          {position}
+                          <i>{position}</i>
                         </div>
                       </td>
                     </tr>
                     <tr>
-                      <td style={{ paddingLeft: '10px' }}>
+                      <td style={{ paddingLeft: '5px' }}>
                         <table>
                           <tbody>
                             {address && (
                               <tr>
-                                <td style={{ paddingRight: '5px' }}>
-                                  <img
-                                    alt=""
-                                    src="https://res.cloudinary.com/smooth/image/upload/w_16,h_16,dpr_2/v1539015595/mail-signature/location-icon.png"
-                                    style={{
-                                      borderStyle: 'none',
-                                      width: '16px',
-                                      height: '16px',
-                                      border: '0',
-                                    }}
-                                  />
-                                </td>
+                                
                                 <td
                                   style={{
                                     textDecoration: 'none',
-                                    color: '#333333',
-                                    fontFamily: 'Arial,sans-serif',
-                                    fontSize: '12px',
+                                    color: '#172D4B',
+                                    fontFamily: 'Figtree',
+                                    fontSize: '16px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                   
+                                    gap: '5px'
                                   }}
                                 >
-                                  {address}
+                                  <MapPinLine size={16} /> {address}
                                 </td>
                               </tr>
                             )}
                             {phone && (
                               <tr>
-                                <td style={{ paddingRight: '5px' }}>
-                                  <img
-                                    alt=""
-                                    src="https://res.cloudinary.com/smooth/image/upload/w_16,h_16,dpr_2/v1539025150/mail-signature/phone-icon.png"
-                                    style={{
-                                      borderStyle: 'none',
-                                      width: '16px',
-                                      height: '16px',
-                                      border: '0',
-                                    }}
-                                  />
-                                </td>
+                               
                                 <td
                                   style={{
                                     textDecoration: 'none',
-                                    color: '#333333',
-                                    fontFamily: 'Arial,sans-serif',
-                                    fontSize: '12px',
+                                    color: '#172D4B',
+                                    fontFamily: 'Figtree',
+                                    fontSize: '16px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                   
+                                    gap: '5px'
                                   }}
                                 >
-                                  {phone}
+                                  <PhoneCall size={16} /> {phone}
                                 </td>
                               </tr>
                             )}
@@ -130,58 +115,7 @@ export function Signature({
                 </table>
               </td>
             </tr>
-            <tr>
-              <td colSpan="2">
-                <div
-                  style={{
-                    backgroundColor: '#BD4932',
-                    width: '400px',
-                    padding: '10px',
-                    marginTop: '5px',
-                  }}
-                >
-                  <a
-                    style={{
-                      textDecoration: 'none',
-                      color: '#ffffff',
-                      fontFamily: 'Arial,sans-serif',
-                      fontSize: '12px',
-                      fontWeight: 'bold',
-                    }}
-                    href="https://www.smooth-code.com/projects"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Découvrez les dernières réalisations du studio
-                    <img
-                      alt=""
-                      src="https://res.cloudinary.com/smooth/image/upload/w_16,h_16,dpr_2/v1539015320/mail-signature/external-link-icon.png"
-                      style={{
-                        borderStyle: 'none',
-                        width: '16px',
-                        height: '16px',
-                        float: 'right',
-                        border: '0',
-                      }}
-                    />
-                  </a>
-                </div>
-              </td>
-            </tr>
-            <tr>
-              <td colspan="2">
-                <div
-                  style={{
-                    backgroundColor: '#FFFFFF',
-                    width: '400px',
-                    padding: '10px',
-                    marginTop: '5px',
-                  }}
-                >
-                  ---
-                </div>
-              </td>
-            </tr>
+
           </tbody>
         </table>
       </div>

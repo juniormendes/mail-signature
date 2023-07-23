@@ -1,9 +1,9 @@
 {
   "short_name": "Mail signature",
-  "name": "Smooth Code - Mail signature",
+  "name": "The Grace - Mail signature",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "https://thegrace.com.br/assets/img/favicon.webp",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     }
