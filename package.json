@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@smooth-ui/core-sc": "^11.0.1",
+    "html2canvas": "^1.4.1",
     "phosphor-react": "^1.4.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

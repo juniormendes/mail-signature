@@ -1,5 +1,7 @@
 import React from 'react'
-import { MapPinLine, PhoneCall } from 'phosphor-react'
+import { MapPinLine, PhoneCall, Download } from 'phosphor-react'
+import html2canvas from 'html2canvas'
+import logo from './logo.png'; // Adjust the path accordingly
 
 export function Signature({
   firstname,
@@ -7,6 +9,33 @@ export function Signature({
   address,
   phone,
 }) {
+
+  const handleDownload = () => {
+    const table = document.getElementById('assign');
+
+    // Set crossorigin="anonymous" on all images to handle cross-origin images
+    const images = table.getElementsByTagName('img');
+    Array.from(images).forEach((img) => {
+      img.setAttribute('crossorigin', 'anonymous');
+    });
+
+    // Ensure the table is fully loaded before capturing
+    html2canvas(table, {
+      scrollX: 0,
+      scrollY: -window.scrollY, // Handle scroll position for capturing
+    }).then((canvas) => {
+      // Convert the canvas to PNG image data URL
+      const imageUri = canvas.toDataURL('image/png');
+
+      // Create a download link
+      const a = document.createElement('a');
+      a.href = imageUri;
+      a.download = 'signature.png';
+      a.click();
+    });
+  };
+
+
   return (
     <div style={{ overflow: 'hidden', textAlign: 'left', 
                   fontFamily: 'Figtree', backgroundColor: 'white', 
@@ -28,7 +57,7 @@ export function Signature({
                 >
                   <img
                     alt="The Grace"
-                    src="https://www.thegrace.com.br/assets/img/logo-the-grace-horizontal.svg"
+                    src={logo}
                     style={{
                       borderStyle: 'none',
                       display: 'block',
@@ -57,7 +86,7 @@ export function Signature({
                         <div
                           style={{
                             marginTop: '-5px',
-                            color: '#172D4B',
+                            color: '#95C121',
                             fontWeight: 'normal',
                           }}
                         >
@@ -118,7 +147,13 @@ export function Signature({
 
           </tbody>
         </table>
+
+        <button onClick={handleDownload} style={{ marginTop: '10px', backgroundColor: '#3261AB', border: 'none', padding: '10px', color: '#fff', borderRadius: '8px' }}>
+          <Download size={16} /> Download da assinatura
+        </button>
       </div>
+     
     </div>
+    
   )
 }
